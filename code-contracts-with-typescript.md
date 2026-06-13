@@ -38,7 +38,7 @@ interface ContstrainedByLambdaFunction extends {
 ```
 
 ```typescript
-export class myFunctionLambdaClass extends  // class 
+export class myFunctionLambdaClass extends  // class mixin
     both (   // <-- self written function for mixin function AND class
     withHandlerAndResult<{body?: someMessage}>(),  // use AI to do the heavy lifting of the implementaiton of these
     withFilePath(),
@@ -70,3 +70,9 @@ to make sets of function parameters mutually exclusive
 
 ## to make it more typesafe you can even check they type of the handler function 
 import the handler in the deployment and check that it has the right type signature for this kind of lambda handler
+
+## neat little trick for dependency injection to make the class property available at runtime
+```
+export class MyStore extends MyAbstractBaseStoreClass implements MyPort {  // <--this is the contract that "MyStore" must fulfill.
+```
+allows `instanceOf` check at runtime.
