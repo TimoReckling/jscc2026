@@ -38,7 +38,7 @@ interface ContstrainedByLambdaFunction extends {
 ```
 
 ```typescript
-export class myFunctionLambdaClass extends  // class mixin
+export class myFunctionLambdaClass extends  // class mixin needed to create types instead of the lambda function definition itself
     both (   // <-- self written function for mixin function AND class
     withHandlerAndResult<{body?: someMessage}>(),  // use AI to do the heavy lifting of the implementaiton of these
     withFilePath(),
